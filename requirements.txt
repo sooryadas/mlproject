@@ -1,0 +1,4 @@
+pandas 
+numpy
+seaborn
+- e . # it will automatic tigger setup.py, If you frequently modify libraries during development and want the changes to reflect in your project
