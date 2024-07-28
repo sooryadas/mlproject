@@ -11,7 +11,6 @@ from sklearn.pipeline import Pipeline
 
 from src.exception import CustomException
 from src.logger import logging
-
 from src.utils import save_object
 
 @dataclass
@@ -27,13 +26,13 @@ class DataTransformation:
         this function is responsible for data transformation
         '''
         try:
-            numerical_column = ["writing score","reading score"]
+            numerical_column = ["writing_score","reading_score"]
             categorical_column = [
                 "gender",
-                "race/ethnicity",
-                "parental level of education",
+                "race_ethnicity",
+                "parental_level_of_education",
                 "lunch",
-                "test preparation course"
+                "test_preparation_course"
             ]
 
             num_pipeline = Pipeline(steps=[
@@ -70,7 +69,7 @@ class DataTransformation:
             preprocessing_obj = self.get_data_transformer_object()
             
             target_column_name="math_score"
-            numerical_column = ["writing score", "reading score"]
+            numerical_column = ["writing_score", "reading_score"]
 
             input_features_train_df=train_df.drop("math_score",axis="columns")
             target_feature_train_df=train_df[target_column_name]
